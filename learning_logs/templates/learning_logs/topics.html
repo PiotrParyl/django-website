@@ -1,15 +1,22 @@
 {% extends "learning_logs/base.html"%}
+
+
 {%block content%}
 
 
-  <p>Tematy</p>
+  <p>Temat: </p>
 
+ 
   <ul>
-    {%for topic in topics%}
-      <li>{{topic}}</li>
-      {% empty %}
+    {% for topic in topics %}
+      <li>
+        
+        <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>      
+      
+      </li>
+    {% empty %}
       <li>nie działa</li>
-      {%endfor%}
+    {%endfor%}
   </ul>
 
-  {%endblock content%}
+{%endblock content%}

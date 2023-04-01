@@ -19,10 +19,8 @@ from learning_logs import views
 
 
 urlpatterns = [
-    path('siemanko/', admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('users/', include('users.urls')),
     path('', include('learning_logs.urls')),
-    #path('stupka', include('learning_logs.urls')),
-    path('topics/(<int:topic_id>)/', views.topic, name='topic'),
-    
-
 ]
+
